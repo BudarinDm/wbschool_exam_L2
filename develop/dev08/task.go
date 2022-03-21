@@ -64,6 +64,8 @@ func main() {
 			if err != nil {
 				log.Println(err.Error())
 			}
+		case "quit":
+			return
 		default:
 			cmd := exec.Command(command[0], command[1:]...)
 			cmd.Stderr = os.Stderr
