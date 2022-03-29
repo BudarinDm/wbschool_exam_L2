@@ -111,7 +111,7 @@ func newDirector(b iBuilder) *director {
 	}
 }
 
-func (d *director) setBuilder(b iBuilder) {
+func (d *director) setBuilder(b iBuilder) { //переназначение директора на другую структ
 	d.builder = b
 }
 

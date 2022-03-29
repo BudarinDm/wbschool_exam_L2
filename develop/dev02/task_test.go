@@ -1,42 +1,22 @@
 package main
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
-func TestUnpack(t *testing.T) {
+func TestUnpackStr(t *testing.T) {
+	var str [7]string
+	str[0] = "a4bc2d5e"
+	str[1] = "abcd"
+	str[2] = "45"
+	str[3] = ""
+	str[4] = "4a5"
+	str[5] = "a5A"
+	str[6] = "a5"
 
-	tests := map[int]struct {
-		packedStr string
-		want      string
-	}{
-		0: {
-			packedStr: "",
-			want:      "",
-		},
-		1: {
-			packedStr: "a4bc2d5e",
-			want:      "aaaabccddddde",
-		},
-		2: {
-			packedStr: "abcd",
-			want:      "abcd",
-		},
-		3: {
-			packedStr: "qwe\\4\\5",
-			want:      "qwe45",
-		},
-		4: {
-			packedStr: "qwe\\45",
-			want:      "qwe44444",
-		},
-		5: {
-			packedStr: "qwe\\\\5",
-			want:      "qwe\\\\\\\\\\",
-		},
-	}
-
-	for index, test := range tests {
-		if Unpack(test.packedStr) != test.want {
-			t.Errorf("test id: %d | Unpack(%s) != %s", index, test.packedStr, test.want)
-		}
+	for i := 0; i < len(str); i++ {
+		res := Unpack(str[i])
+		fmt.Println(res)
 	}
 }

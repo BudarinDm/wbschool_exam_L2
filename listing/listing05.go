@@ -1,7 +1,7 @@
-Что выведет программа? Объяснить вывод программы.
-
-```go
+//Что выведет программа? Объяснить вывод программы.
 package main
+
+import "fmt"
 
 type customError struct {
 	msg string
@@ -11,7 +11,7 @@ func (e *customError) Error() string {
 	return e.msg
 }
 
-func test() *customError {
+func test1() *customError {
 	{
 		// do something
 	}
@@ -20,17 +20,13 @@ func test() *customError {
 
 func main() {
 	var err error
-	err = test()
+	err = test1()
+	fmt.Printf("%T", err) //*main.customErrorerror
 	if err != nil {
 		println("error")
 		return
 	}
 	println("ok")
 }
-```
 
-Ответ:
-```
-...
-
-```
+//Ответ: error

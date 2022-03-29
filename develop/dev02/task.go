@@ -25,7 +25,7 @@ import (
 Функция должна проходить все тесты. Код должен проходить проверки go vet и golint.
 */
 
-// Unpack : unpacks a string containing repeated characters/runes
+// Unpack df
 func Unpack(str string) string {
 	var lastLetter rune             //сюда будем писать наше последнее значение
 	var result, num strings.Builder //сюда будем писать рузльтат конеченый и цифру(спецсимвол или как его еще назвать)

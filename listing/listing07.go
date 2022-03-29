@@ -1,6 +1,4 @@
-Что выведет программа? Объяснить вывод программы.
-
-```go
+//Что выведет программа? Объяснить вывод программы.
 package main
 
 import (
@@ -28,9 +26,9 @@ func merge(a, b <-chan int) <-chan int {
 	go func() {
 		for {
 			select {
-			case v := <-a:
+			case v := <-a: // Как только все данные будут прочитаны, будут слаться пустые значения
 				c <- v
-			case v := <-b:
+			case v := <-b: // Как только все данные будут прочитаны, будут слаться пустые значения
 				c <- v
 			}
 		}
@@ -41,16 +39,11 @@ func merge(a, b <-chan int) <-chan int {
 func main() {
 
 	a := asChan(1, 3, 5, 7)
-	b := asChan(2, 4 ,6, 8)
-	c := merge(a, b )
+	b := asChan(2, 4, 6, 8)
+	c := merge(a, b)
 	for v := range c {
 		fmt.Println(v)
 	}
 }
-```
 
-Ответ:
-```
-...
-
-```
+//Ответ:
