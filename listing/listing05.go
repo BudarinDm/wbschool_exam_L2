@@ -21,7 +21,7 @@ func test1() *customError {
 func main() {
 	var err error
 	err = test1()
-	fmt.Printf("%T", err) //*main.customErrorerror
+	fmt.Printf("%T", err) //*main.customError
 	if err != nil {
 		println("error")
 		return

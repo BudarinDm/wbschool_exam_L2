@@ -75,7 +75,7 @@ func (a *areaCalculator) visitForSquare(s *square) {
 }
 
 func (a *areaCalculator) visitForCircle(s *circle) {
-	fmt.Println("Calculating area for circle")
+	fmt.Println("Calculating area for", s.getType())
 }
 func (a *areaCalculator) visitForrectangle(s *rectangle) {
 	fmt.Println("Calculating area for rectangle")
