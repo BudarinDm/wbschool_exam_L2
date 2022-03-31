@@ -271,7 +271,7 @@ func (a *MobileAlertSong) Alert() string {
 	return "Белые розы, Белые розы. Беззащитны шипы..."
 }
 
-// StatePattern outputs example of state usage
+// StatePattern выводит пример использования состояния
 func StatePattern() {
 
 	mobile := NewMobileAlert()
