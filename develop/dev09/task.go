@@ -18,7 +18,7 @@ import (
 */
 
 var (
-	name = flag.String("O", "newFile", "name")
+	name = flag.String("O", "newFile.txt", "name")
 )
 
 func main() {

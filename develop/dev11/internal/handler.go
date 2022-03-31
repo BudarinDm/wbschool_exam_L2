@@ -15,10 +15,10 @@ func (h *Handler) InitRoutes(calendar Calendar) {
 	//Handle регистрирует и сопостовляет патерн с обработчиком который передаем
 	//HandlerFunc это адаптер, позволяющий использовать обычные функции в качестве обработчиков HTTP.
 	//Если f — функция с соответствующей сигнатурой, HandlerFunc(f) — это обработчик, вызывающий f.
-	http.Handle("/create_event", http.HandlerFunc(h.CreateEvent))
-	http.Handle("/update_event", http.HandlerFunc(h.UpdateEvent))
-	http.Handle("/delete_event", http.HandlerFunc(h.DeleteEvent))
-	http.Handle("/events_for_day", http.HandlerFunc(h.EventsPerDay))
-	http.Handle("/events_for_week", http.HandlerFunc(h.EventsPerWeek))
-	http.Handle("/events_for_month", http.HandlerFunc(h.EventsPerMonth))
+	http.Handle("/create_event", Logging(http.HandlerFunc(h.CreateEvent)))
+	http.Handle("/update_event", Logging(http.HandlerFunc(h.UpdateEvent)))
+	http.Handle("/delete_event", Logging(http.HandlerFunc(h.DeleteEvent)))
+	http.Handle("/events_for_day", Logging(http.HandlerFunc(h.EventsPerDay)))
+	http.Handle("/events_for_week", Logging(http.HandlerFunc(h.EventsPerWeek)))
+	http.Handle("/events_for_month", Logging(http.HandlerFunc(h.EventsPerMonth)))
 }
